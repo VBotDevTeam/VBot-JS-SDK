@@ -1,4 +1,8 @@
-import { VBotClient } from "./sdk/vbot-sdk-1.0.9.js";
+// import { VBotClient } from "./vbot-sdk-1.0.8-dev.js";
+// import { VBotClient } from "./vbot-sdk-1.0.9.js";
+import { VBotClient } from "./sdk/vbot-sdk-1.1.0.js";
+// import { VBotClient } from "./vbot-sdk-1.1.0-dev.js";
+// import { VBotClient } from "./vbot-sdk-1.0.8.js";
 
 var clientCall;
 var sessionCall;
@@ -158,7 +162,7 @@ function statusCall(session) {
   session.on("statusUpdate", function (status) {
 
     document.getElementById('debug-console').value += `Trạng thái của cuộc gọi đã thay đổi thành ${status.status}` + '\n';
-    if (status.status == 'terminated') {
+    if(status.status == 'terminated') {
       document.getElementById('accecpt-call-btn').hidden = true;
       document.getElementById('reject-call-btn').hidden = true;
       document.getElementById('callIn-info').innerHTML = '';
